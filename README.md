@@ -10,6 +10,15 @@ Check out the [live DemocracyOS demo](https://app.democracyos.org/).
 ![DemocracyOS](https://cldup.com/5UCVpUnOhO.png)
 
 ## Installation
+
+To get started with DemocracyOS, you will need to have installed:
+
+    MongoDB open-source document database.
+    NodeJS & NPM platform.
+    Git distributed version control system. If you’re on github and don’t have git, you’re doing it wrong.
+    Make build automation utility.
+    OpenSSL in case you want to generate SSL certificates.
+
 Please refer to the [Installation](http://docs.democracyos.org/install.html) wiki page for detailed instructions on how to install and setup your instance of DemocracyOS.
 
 ## Current DemocracyOS deployments
@@ -21,6 +30,7 @@ Please refer to the [Installation](http://docs.democracyos.org/install.html) wik
 * [PAMI](http://debatics.pami.org.ar/): The largest healthcare program for elderly people opens its technical decisions.
 * [Ukrainian Choice](http://ukrainianchoice.herokuapp.com/law/557ba8ca29e8180300c88c48): Official deployment of DemocracyOS Ukraine.
 * [Paris](https://crm.paris.fr/2016/): Official deployment of DemocracyOS in Paris (France) by city's mayor Anne Hidalgo.
+* [Nanterre](https://participez.nanterre.fr/): Official deployment of DemocracyOS in Nanterre (France) to engage conversation between the city hall and the citizens
 
 ## Contributing
 
