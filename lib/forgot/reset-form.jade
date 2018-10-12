@@ -2,7 +2,7 @@
   #forgot-form.reset
     .title-page
       .circle
-        i.icon-signin
+        i.fa.fa-sign-in
       h1= t('forgot.reset')
     form.form(action="/forgot/reset", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       input(type='hidden', name='token', value=token)

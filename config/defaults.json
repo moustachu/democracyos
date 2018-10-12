@@ -11,8 +11,10 @@
   "signupUrl": "",
   "settingsUrl": "",
   "staff": [],
+  "domainWhiteList": [],
   "allowEmailAliases": true,
   "facebookSignin": false,
+  "googleSignin": false,
   "publicEmails": false,
   "auth": {
     "basic": {
@@ -20,9 +22,13 @@
       "password": ""
     },
     "facebook": {
-      "clientID": "",
+      "clientId": "",
       "clientSecret": "",
       "permissions": [ "email" ]
+    },
+    "google": {
+      "clientId": "",
+      "clientSecret": ""
     }
   },
   "https": {
@@ -55,6 +61,7 @@
     "favicon",
     "organizationName",
     "organizationUrl",
+    "organizationEmail",
     "learnMoreUrl",
     "googleAnalyticsTrackingId",
     "commentsPerPage",
@@ -69,13 +76,16 @@
     "headerBackgroundColor",
     "headerFontColor",
     "facebookSignin",
+    "googleSignin",
     "visibility",
     "usersWhitelist",
     "multiForum",
     "tweetText",
     "segmentKey",
     "spamLimit",
-    "availableLocales"
+    "availableLocales",
+    "domainWhiteList",
+    "showCommentsReplies"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -96,15 +106,17 @@
   "googleAnalyticsTrackingId": "",
   "rssEnabled": true,
   "commentsPerPage": 0,
+  "showCommentsReplies": false,
   "spamLimit": 5,
   "frequentlyAskedQuestions": false,
   "termsOfService": false,
-  "privacyPolicy": false,
+  "privacyPolicy": true,
   "glossary": false,
   "homeLink": "/",
-  "headerBackgroundColor": "",
-  "headerFontColor": "",
+  "headerBackgroundColor": "#64476e",
+  "headerFontColor": "#fff",
   "headerContrast": false,
+  "styleguide": false,
   "googleAPIKey": "",
   "visibility": "visible",
   "usersWhitelist": false,

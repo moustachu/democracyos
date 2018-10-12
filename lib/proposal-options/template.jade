@@ -22,7 +22,7 @@
           include vote-neutral
 
         a.meta-item.change-vote(href="#", class= voted && !closed ? '' : 'hide')
-          i.icon-refresh
+          i.fa.fa-refresh
           small #{t('proposal-options.change-vote')}.
 
       .vote-options(class= voted || closed ? 'hide' : '')

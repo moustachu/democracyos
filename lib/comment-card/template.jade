@@ -1,29 +1,39 @@
 mixin remove-action
   - var hide = repliesCounter && !user.staff ? 'hide' : ''
-  a.comment-action.link-remove.btn-remove(href="#", title=t('comment-card.remove-argument'), class=hide)
-    i.icon-remove
+  button.btn.btn-default.delete-comment(title=t('comment-card.remove-argument'), class=hide)
+    i.fa.fa-trash-o
 
 li.media.comment-item(class=classes)
-  span.pull-left
-    img.avatar(src=avatar, title=comment.author.displayName)
+  .media-left
+    img.media-object.avatar(src=avatar, title=comment.author.displayName)
 
   .media-body
-    h5.media-heading(title=comment.author.displayName)
+    h3.media-heading(title=comment.author.displayName)
       | #{comment.author.fullName}
+      - if (comment.author.staff)
+        span.badge.staff=t('admin-users.list.staff')
       small.ago(data-time=comment.createdAt.toString())
       - if (comment.editedAt)
-        small.edited · #{t('comments.edited')}
-      - if (own)
-        +remove-action
-        a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
-          i.icon-pencil
-      - else if (user.logged())
-        - if (user.staff)
-          +remove-action
-        - var spamTitle = flags ?  t('comment-card.not-spam') : t('comment-card.report-spam')
-        a.comment-action.link-report.flag(href="#", title=spamTitle, class=flags ? 'selected' : '')
-          i.glyphicon.glyphicon-flag
-          span.count=comment.flags.length ? comment.flags.length : ''
+        small.edited &nbsp;·&nbsp;#{t('comments.edited')}
+      - if (user.logged())
+        .actions.btn-group.pull-right
+          button.btn.btn-default.btn-circle.dropdown-toggle.view-options(data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+            i.fa.fa-cog
+          ul.dropdown-menu
+            - if (!own)
+              li
+                a.comment-action.link-report.flag(href="#", title=spamTitle, class=flags ? 'selected' : '')
+                  span.count=comment.flags.length ? comment.flags.length : ''
+                  i.glyphicon.glyphicon-flag
+            - if (own)
+              li
+                a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
+                  i.fa.fa-pencil
+            - if (own || user.staff)
+              - var hide = repliesCounter && !user.staff ? 'hide' : ''
+              li
+                a.delete-comment(title=t('comment-card.remove-argument'), class=hide)
+                  i.fa.fa-trash-o
     .comment-body
       .comment-text!=markdown(comment.text)
       - if (own || user.staff)
@@ -35,17 +45,23 @@ li.media.comment-item(class=classes)
             a.confirm-remove(href='#')= t('common.ok')
             a.cancel-remove(href='#')= t('common.cancel')
       .oncomment.message
-      p.spam-message=t('comment-card.flagged-as-spam')
-        | .
-        span.show-spam: a(href="#")= t('comment-card.show')
-      .comment-actions
-        - if (repliesCounter || user.id)
-          - var title = repliesCounter + ' ' + (repliesCounter > 1 ? t('comments.replies') : t('comments.reply'))
-          a.comment-action.comment-reply.pull-right(href='#', title=title.toLowerCase())
+        p.spam-message=t('comment-card.flagged-as-spam')
+          | .
+          span.show-spam: a(href='#')= t('comment-card.show')
+    .comment-form
+    .comment-actions.btn-toolbar(role='toolbar')
+      - if (repliesCounter)
+        .btn-group(role='group')
+          button.btn.btn-default.reply-counter
+            i.fa.fa-comments-o
             span.reply-counter= repliesCounter > 0 ? repliesCounter : ''
-          a.comment-action.comment-reply.pull-right(href='#', title=t('comments.reply-to-argument'))
-            i.icon-reply
-      span.error
+            i.fa.fa-caret-down
+      - if (user.id)
+        .btn-group(role='group')
+          button.btn.btn-block.btn-dashed.new-reply
+            i.fa.fa-plus
+            span=t('comments.reply')
+    span.error
       .oncomment.loginrequired
         =t('comments.sign-in-required-to-vote-comments')
         |.
@@ -53,5 +69,4 @@ li.media.comment-item(class=classes)
         |  #{t('common.or')}
         a(href='/signup')= t('signin.signup')
         |.
-
-  .replies-container
+    .replies-container

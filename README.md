@@ -1,4 +1,4 @@
-# DemocracyOS [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+# DemocracyOS [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 [![Dependencies](https://david-dm.org/DemocracyOS/app.svg)](https://david-dm.org/DemocracyOS/app.svg)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/DemocracyOS/app)
 [![Code Climate](https://codeclimate.com/github/DemocracyOS/app/badges/gpa.svg)](https://codeclimate.com/github/DemocracyOS/app)
@@ -19,7 +19,9 @@ Please refer to the [Installation](http://docs.democracyos.org/install.html) wik
 * [Loi Renseignement](http://pjlr.democracyos.eu/): First deployment by DemocracyOS France to discuss the Loi Renseignement.
 * [Evoks](http://evoks.hu/): Hungarian project by Atlatzo.hu for discussing social issues.
 * [PAMI](http://debatics.pami.org.ar/): The largest healthcare program for elderly peolpe opens its technical decisions.
-* [Ukrainian Choice](http://ukrainianchoice.herokuapp.com/law/557ba8ca29e8180300c88c48): Official deployment of DemocracyOS Ukraine.
+* [Cambridge City's Councillor Nadeem Mazen](http://nadeemmazen.democracyos.com/): Councillor Nadeem Mazen's official DemocracyOS.
+* [Ukrainian Choice](http://ukrainianchoice.herokuapp.com/): Official deployment of DemocracyOS Ukraine.
+>>>>>>> auth-google-app
 
 ## Contributing
 
@@ -36,6 +38,7 @@ See [CONTRIBUTORS.md](https://github.com/DemocracyOS/app/blob/master/CONTRIBUTOR
 * [DemocracyOS mailing list](https://groups.google.com/forum/#!forum/democracyos-app): questions about DemocracyOS exclusively. For bug reports or feature requests please use the project's [Issues](https://github.com/DemocracyOS/app/issues).
 * [DemocracyOS chat room](https://gitter.im/democracyos/app/).
 * [Democracia en Red](http://democraciaenred.org): The `Net Democracy Foundation` official site.
+>>>>>>> auth-google-app
 
 ## Browser support
 

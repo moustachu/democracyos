@@ -1,0 +1,19 @@
+.google-auth-form.inner-container.small-container
+  .title-page
+    i.fa.fa-sign-in
+    h1= t('signin.login-to') + ' ' + t('common.app-name')
+  - if (config.domainWhiteList.length)
+  - var domains = config.domainWhiteList
+    p!=t('signin.google.domain')
+    ul.list-unstyled
+      each d in domains
+        li= '@' + d
+  form(action="/auth/google", method="get", role="form")
+    button.btn-google(type="submit")
+      span.flaticon.social.google-plus
+      = t('signin.login-with-google')
+  p!=t('signin.google.contact',{email: config.organizationEmail})
+  - if (config.termsOfService)
+    p: a(href="/help/terms-of-service")= t('help.tos.title')
+  - if (config.privacyPolicy)
+    p: a(href="/help/privacy-policy")= t('help.pp.title')

@@ -1,6 +1,21 @@
 //- Boostrap Complete
-link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
-link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', rel='stylesheet')
+link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel="stylesheet", integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==", crossorigin="anonymous")
+link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==", crossorigin="anonymous")
 
 //- Application Styles
 link(rel='stylesheet', href='/app.css')
+
+//- Config Color
+- var myHeaderBackgroundColor = config.headerBackgroundColor;
+- var myHeaderFontColor = config.headerFontColor;
+- var myHeaderContrast = config.headerContrast ? '0 2px 2px #d5d5d5' : 'none';
+style.
+  .header-background-color {
+    background-color: !{myHeaderBackgroundColor}
+  }
+  .header-font-color {
+    color: !{myHeaderFontColor}
+  }
+  .header-contrast {
+    box-shadow: !{myHeaderContrast}
+  }

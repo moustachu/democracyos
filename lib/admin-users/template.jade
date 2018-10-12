@@ -1,0 +1,16 @@
+#users-wrapper
+  .users-admin
+    .row
+      .list.list-group
+        - each user in users
+          a.list-group-item(href="/admin/users/" + user.id)
+            .media
+              .media-left
+                img.media-object(src=user.avatar)
+              .media-body
+                span=user.fullName
+                - if (user.staff)
+                  span.badge.staff=t("admin-users.list.staff")
+                p
+                  span.fa.fa-envelope-o
+                  = ' ' + user.email 

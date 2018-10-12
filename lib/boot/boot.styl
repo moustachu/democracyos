@@ -72,6 +72,7 @@ a
   &:active
     color #3d699e
     text-decoration none
+    outline none
 
 img.avatar
   border-radius 100%
@@ -81,17 +82,57 @@ img.avatar
   letter-spacing .1px
   border 0
   border-radius 2px
+  background-color transparent
+
+  transition all 0.3s ease
+
+  .fa + span
+    margin 0 0.5em
+
+  &:active, &:focus, &:active:focus
+    -webkit-box-shadow none
+    box-shadow none
+    outline none
+    text-decoration none
+
+.btn-default, .btn-dashed
+  border 0
+  color #777
+  border 1px solid #ddd
+  &:hover
+    color #484848
+    border-color #ccc
+    background-color inherit
+
+.btn-dashed
+  font-weight normal
+  border-style dashed
+  color #999
+
+.btn-primary
+  background-color #3d699e
+  &:hover
+    background-color darken(#3d699e, 40%)
+
+.btn-info
+  background-color #3498db
+  &:hover
+    background-color darken(#3498db, 40%)
 
 .btn-success
-  background-color #27ae60
-
+  background-color #8bc34a
   &:hover
-    background-color #1C8045
+    background-color darken(#8BC34A, 40%)
 
-.btn-default
-  border 0
-  color #333
-  background-color #f5f5f5
+.btn-danger
+  background-color #ef5350
+  &:hover
+    background-color darken(#ef5350, 40%)
+
+.btn-link
+  color #3d699e
+  &:hover
+    text-decoration none
 
 .btn-group > .btn + .dropdown-toggle
   padding-left 13px
@@ -112,11 +153,11 @@ label
   &.alert-info
     background-color #3498db
   &.alert-success
-    background-color #27ae60
+    background-color #8bc34a
   &.alert-warning
     background-color #f1c40f
   &.alert-block
-    background-color #bebec5
+    background-color #999
     color white
 
 .system-alert
@@ -160,9 +201,8 @@ label
     color #7f8c8d
 
   h1
-    font-size 12px
+    font-size 14px
     letter-spacing 1px
-    text-transform uppercase
 
 /* Site Content Container
 -------------------------------------------------- */
@@ -246,13 +286,12 @@ body
       width 98%
       margin-left 0
 
-    p
-      font-size 1.1em
     .content
       padding 0px 20px 10px 20px
       width 100% // overrides .dialog width from dialog component
       max-width none
       min-width 0
+      border 0
 
       .title
         position absolute
@@ -261,10 +300,9 @@ body
         top 0px
         min-height 20px
         padding 5px 20px
-        background #D95E59
+        background #EF5350
         color #FFF
-        text-transform uppercase
-        font-weight 600
+        font-weight bold
       .body
         padding 20px 0px
         margin-top 30px
@@ -272,27 +310,29 @@ body
         line-height 10px
         top 10px
         right 10px
-        font-weight 600
-        color #000
-        opacity .5
+        font-weight bold
+        color #fff
+        opacity 1
     .confirmation-actions
       padding 5px 10px
       button
         border none
+        border-radius 2px
         color #FFF
         background #aaa
-        padding 5px 10px
-        letter-spacing 0.09em
-        text-transform uppercase
-        font-size 0.7em
+        padding 6px 12px
+        font-size 14px
+        font-weight bold
         outline none
-        margin-left 5px
         &.cancel
           outline none
+          color #999
+          background-color transparent
           &:focus, &:hover
-            background #777
+            color #484848
+            background-color transparent
         &.main, &.ok
-          background #D95E59
+          background #EF5350
           &:focus, &:hover
             background #952722
 

@@ -19,10 +19,10 @@
     - var color = config.headerFontColor;
     - var style = color ? 'color: ' + color : '';
     a(href='/signin', style=style).login.pull-right.anonymous-user
-      i.icon-signin
+      i.fa.fa-sign-in
       span= t('header.signin')
     a(href='/signup', style=style).login.pull-right.anonymous-user
-      i.icon-user
+      i.fa.fa-user
       span= t('header.signup')
     - var target = config.homeLink ? {} : { 'target': '_blank'};
     a.login.pull-left(href=config.organizationUrl, style=style)&attributes(target)
